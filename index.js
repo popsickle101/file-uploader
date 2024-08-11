@@ -12,7 +12,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const { Pool } = require("pg");
 const passport = require("passport");
-const { setApp } = require("cli");
+;
 const LocalStrategy = require('passport-local').Strategy;
 const app = express();
 app.use(express.urlencoded({ extended: true }));
