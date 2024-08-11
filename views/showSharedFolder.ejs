@@ -1,0 +1,40 @@
+<!-- views/showSharedFolder.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Folder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .file-list {
+            margin-top: 20px;
+        }
+        .file-list a {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shared Folder: <%= folder.name %></h1>
+        <div class="file-list">
+            <% if (folder.files.length > 0) { %>
+                <% folder.files.forEach(file => { %>
+                    <a href="/files/<%= file.id %>/download"><%= file.filename %></a>
+                <% }); %>
+            <% } else { %>
+                <p>No files in this folder.</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

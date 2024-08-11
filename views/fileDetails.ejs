@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Details</title>
+</head>
+<body>
+  <h1>File Details</h1>
+
+  <p><strong>Name:</strong> <%= fileDetails.name %></p>
+  <p><strong>Size:</strong> <%= fileDetails.size %> bytes</p>
+  <p><strong>Uploaded On:</strong> <%= fileDetails.uploadTime %></p>
+
+  <form action="/files/<%= fileId %>/download" method="get">
+    <button type="submit">Download File</button>
+  </form>
+
+  
+</body>
+</html>

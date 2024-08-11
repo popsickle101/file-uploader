@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Folder</title>
+</head>
+<body>
+    <h1>Share Folder</h1>
+    <form action="/folders/<%= folderId %>/share" method="POST">
+        <label for="duration">Share Duration:</label>
+        <input type="text" id="duration" name="duration" placeholder="e.g., 1d, 10h" required>
+        <button type="submit">Generate Share Link</button>
+    </form>
+    <% if (typeof shareLink !== 'undefined' && shareLink) { %>
+        <h2>Shareable Link:</h2>
+        <a href="<%= shareLink %>" target="_blank"><%= shareLink %></a>
+    <% } %>
+</body>
+</html>
